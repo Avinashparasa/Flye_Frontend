@@ -12,23 +12,23 @@ Filtering: Filter users by workout type and search by username.
 
 
 # Tech Stack
-Frontend: Angular 14+, Tailwind CSS
-Routing: Angular Router
-Local Storage: Browser's local storage for saving user workouts
+Frontend: Angular 14+, Tailwind CSS  
+Routing: Angular Router  
+Local Storage: Browser's local storage for saving user workouts  
 
 # Setup
-Clone the repository:
-git clone https://github.com/Avinashparasa/Flye_Frontend
-cd health-challenge-tracker
+Clone the repository:  
+git clone https://github.com/Avinashparasa/Flye_Frontend  
+cd health-challenge-tracker  
 
 
 # Install dependencies:
-npm install
+npm install  
 
 # Run the application:
-ng serve
+ng serve  
 
-The app will be available at http://localhost:4200/
+The app will be available at http://localhost:4200/  
 
 
 # To run the unit tests:
