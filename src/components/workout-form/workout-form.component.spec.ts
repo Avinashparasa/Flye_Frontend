@@ -9,12 +9,12 @@ describe('WorkoutFormComponent', () => {
   let router: Router;
 
   beforeEach(async () => {
-    const routerSpy = jasmine.createSpyObj('Router', ['navigate']);
+    const mockRouter = jasmine.createSpyObj('Router', ['navigate']);
 
     await TestBed.configureTestingModule({
       imports: [FormsModule],
       declarations: [WorkoutFormComponent],
-      providers: [{ provide: Router, useValue: routerSpy }]
+      providers: [{ provide: Router, useValue: mockRouter }]
     }).compileComponents();
 
     fixture = TestBed.createComponent(WorkoutFormComponent);
@@ -23,32 +23,33 @@ describe('WorkoutFormComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it('should initialize the component successfully', () => {
     expect(component).toBeTruthy();
   });
 
-  it('form should be invalid when empty', () => {
+  it('should have an invalid form when no data is provided', () => {
     expect(component.workout.username).toBe('');
     expect(component.workout.workoutType).toBe('');
     expect(component.workout.workoutMinutes).toBeNull();
     expect(fixture.nativeElement.querySelector('form').checkValidity()).toBeFalse();
   });
 
-  it('form should be valid when all fields are filled', () => {
-    component.workout.username = 'Test User';
-    component.workout.workoutType = 'Running';
-    component.workout.workoutMinutes = 30;
+  it('should validate form when all fields are filled', () => {
+    component.workout.username = 'Sample User';
+    component.workout.workoutType = 'Jogging';
+    component.workout.workoutMinutes = 45;
     fixture.detectChanges();
+
     expect(fixture.nativeElement.querySelector('form').checkValidity()).toBeTrue();
   });
 
-  it('should store workout in localStorage and navigate to workout list on form submit', () => {
+  it('should save workout details in localStorage and navigate to workout list upon submission', () => {
     spyOn(localStorage, 'setItem').and.callThrough();
     spyOn(localStorage, 'getItem').and.returnValue('[]');
 
-    component.workout.username = 'Test User';
-    component.workout.workoutType = 'Running';
-    component.workout.workoutMinutes = 30;
+    component.workout.username = 'Sample User';
+    component.workout.workoutType = 'Jogging';
+    component.workout.workoutMinutes = 45;
 
     fixture.detectChanges();
     fixture.nativeElement.querySelector('form').dispatchEvent(new Event('submit'));

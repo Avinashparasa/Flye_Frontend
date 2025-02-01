@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { Router, RouterOutlet } from '@angular/router';
-import { FormsModule, NgForm } from '@angular/forms';
-import { WorkoutListComponent } from '../workout-list/workout-list.component';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-workout-form',
@@ -9,7 +8,8 @@ import { WorkoutListComponent } from '../workout-list/workout-list.component';
   imports: [RouterOutlet, FormsModule],
   templateUrl: './workout-form.component.html',
   styleUrls: ['./workout-form.component.css']
-})export class WorkoutFormComponent {
+})
+export class WorkoutFormComponent {
   workout = {
     username: '',
     workoutType: 'Cycling',
@@ -20,9 +20,9 @@ import { WorkoutListComponent } from '../workout-list/workout-list.component';
 
   onSubmit(form: any) {
     if (form.valid) {
-      const workouts = JSON.parse(localStorage.getItem('workouts') || '[]');
-      workouts.push(this.workout);
-      localStorage.setItem('workouts', JSON.stringify(workouts));
+      const storedWorkouts = JSON.parse(localStorage.getItem('workouts') || '[]');
+      storedWorkouts.push(this.workout);
+      localStorage.setItem('workouts', JSON.stringify(storedWorkouts));
       this.router.navigate(['/workout-list']);
     }
   }
