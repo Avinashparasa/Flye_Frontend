@@ -5,6 +5,12 @@ import { WorkoutChartComponent } from './workout-chart/workout-chart.component';
 
 export const routes: Routes = [
   {
+    path: '',
+    redirectTo: 'workout-form',
+    component: WorkoutFormComponent,
+    pathMatch: 'full'
+  },
+  {
     path: 'work-chart',
     // redirectTo: 'workout-form',
     component: WorkoutChartComponent,
