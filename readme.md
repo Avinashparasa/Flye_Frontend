@@ -5,10 +5,10 @@ The Health Challenge Tracker is an Angular-based single-page application (SPA) t
 
 # Features
 Workout Form: Users can add their workout details (username, workout type, and duration).  
-Workout List: Displays a list of all users and their associated workouts, with options to search, filter, and paginate the results.
-Local Storage: Workouts are saved to the browser's local storage to persist across sessions.
-Pagination: View workouts with paginated results.
-Filtering: Filter users by workout type and search by username.
+Workout List: Displays a list of all users and their associated workouts, with options to search, filter, and paginate the results.  
+Local Storage: Workouts are saved to the browser's local storage to persist across sessions.  
+Pagination: View workouts with paginated results.  
+Filtering: Filter users by workout type and search by username.  
 
 
 # Tech Stack
