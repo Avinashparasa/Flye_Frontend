@@ -1,4 +1,4 @@
-Health Challenge Tracker
+#Health Challenge Tracker
 Overview
 The Health Challenge Tracker is an Angular-based single-page application (SPA) that allows users to track their workout activities. Users can input their name, workout type, and workout duration. The application displays a list of user workouts with search, filter, and pagination functionalities. Optionally, it also includes a chart to visualize workout progress.
 
@@ -18,7 +18,7 @@ Local Storage: Browser's local storage for saving user workouts
 
 Setup
 Clone the repository:
-git clone <repository-url>
+git clone https://github.com/Avinashparasa/Flye_Frontend
 cd health-challenge-tracker
 
 
