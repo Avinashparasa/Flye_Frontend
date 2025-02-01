@@ -1,0 +1,35 @@
+<!-- Header -->
+<header class="bg-white text-black p-4 shadow-sm font-sans border-b border-gray-200">
+  <div class="max-w-7xl mx-auto flex items-center">
+    <!-- Website Symbol and Name -->
+    <div class="flex items-center space-x-3">
+      <!-- Symbol (Replace with your logo or icon) -->
+      <div class="w-8 h-8 bg-black rounded-full flex items-center justify-center">
+        <span class="text-white font-bold text-lg">H</span>
+      </div>
+      <!-- Website Name -->
+      <legend class="text-2xl font-bold">
+        Health Tracker
+      </legend>
+    </div>
+
+    <!-- Navigation Links -->
+    <nav class="ml-8">
+      <ul class="flex space-x-6 text-lg font-medium">
+        <li><a href="workout-form" class="hover:text-gray-600 transition duration-300">Add Workout</a></li>
+        <li><a href="workout-list" class="hover:text-gray-600 transition duration-300">List of Workouts</a></li>
+        <li><a href="work-chart" class="hover:text-gray-600 transition duration-300">Progress</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<!-- Workout Form -->
+<router-outlet></router-outlet>
+
+<!-- Footer -->
+<footer class="fixed bottom-0 left-0 w-full bg-white text-black p-4 shadow-sm border-t border-gray-200 font-sans">
+  <div class="max-w-7xl mx-auto text-center">
+    <label class="text-sm text-gray-600">Made for Fyle Frontend Internship</label>
+  </div>
+</footer>

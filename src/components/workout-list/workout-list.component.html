@@ -1,0 +1,97 @@
+<div class="max-w-6xl mx-auto p-8 min-h-[86vh] bg-gray-50">
+  <!-- Filters -->
+  <div class="flex flex-col md:flex-row md:justify-between mb-12 space-y-4 md:space-y-0 md:space-x-6">
+    <!-- Search Input -->
+    <input
+      type="text"
+      [(ngModel)]="searchTerm"
+      (input)="applyFilters()"
+      placeholder="Search by name"
+      class="px-6 py-3 bg-white border-2 border-gray-300 rounded-lg text-gray-900 focus:outline-none focus:border-black focus:ring-2 focus:ring-gray-200 transition-all w-full md:w-1/2"
+    />
+
+    <!-- Workout Type Filter -->
+    <select
+      [(ngModel)]="filterType"
+      (change)="applyFilters()"
+      class="px-6 py-3 bg-white border-2 border-gray-300 rounded-lg text-gray-900 focus:outline-none focus:border-black focus:ring-2 focus:ring-gray-200 transition-all w-full md:w-1/2 cursor-pointer"
+    >
+      <option value="">Filter by workout type</option>
+      <option value="All">All</option>
+      <option value="Running">Running</option>
+      <option value="Cycling">Cycling</option>
+      <option value="Swimming">Swimming</option>
+      <option value="Yoga">Yoga</option>
+      <option value="Meditation">Meditation</option>
+    </select>
+  </div>
+
+  <!-- Table -->
+  <div class="overflow-x-auto bg-white rounded-xl shadow-lg border border-gray-200">
+    <table class="min-w-full text-left">
+      <thead class="bg-gray-100">
+        <tr>
+          <th class="p-5 text-lg font-semibold text-gray-900 border-b-2 border-gray-200">Name</th>
+          <th class="p-5 text-lg font-semibold text-gray-900 border-b-2 border-gray-200">Workouts</th>
+          <th class="p-5 text-lg font-semibold text-gray-900 border-b-2 border-gray-200">Number of Workouts</th>
+          <th class="p-5 text-lg font-semibold text-gray-900 border-b-2 border-gray-200">Total Workout Minutes</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let user of paginatedUsers" class="hover:bg-gray-50 transition-all">
+          <td class="p-5 text-gray-700 border-b border-gray-200">{{ user.name }}</td>
+          <td class="p-5 text-gray-700 border-b border-gray-200">{{ getWorkoutTypes(user) }}</td>
+          <td class="p-5 text-gray-700 border-b border-gray-200">{{ user.workouts.length }}</td>
+          <td class="p-5 text-gray-700 border-b border-gray-200">{{ getTotalWorkoutMinutes(user) }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Pagination -->
+  <div class="mt-8 flex justify-center flex-wrap max-[500px]:flex-col space-x-2 space-y-2">
+    <!-- Previous Button -->
+    <button
+      (click)="goToPage(currentPage - 1)"
+      [disabled]="currentPage === 1"
+      class="px-4 py-2 bg-white border-2 border-gray-300 rounded-lg text-gray-900 hover:bg-gray-100 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+    >
+      &lt;&lt; Previous
+    </button>
+
+    <!-- Page Numbers -->
+    <button
+      *ngFor="let page of pagesArray"
+      (click)="goToPage(page)"
+      [class.bg-black]="currentPage === page"
+      [class.text-white]="currentPage === page"
+      class="px-4 py-2 bg-white border-2 border-gray-300 rounded-lg text-gray-900 hover:bg-gray-100 transition-all"
+    >
+      {{ page }}
+    </button>
+
+    <!-- Next Button -->
+    <button
+      (click)="goToPage(currentPage + 1)"
+      [disabled]="currentPage === pagesArray.length"
+      class="px-4 py-2 bg-white border-2 border-gray-300 rounded-lg text-gray-900 hover:bg-gray-100 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+    >
+      Next &gt;&gt;
+    </button>
+
+    <!-- Items Per Page -->
+    <div class="ml-4 flex items-center space-x-2">
+      <label for="itemsPerPage" class="text-gray-700">Items per page:</label>
+      <select
+        id="itemsPerPage"
+        [(ngModel)]="itemsPerPage"
+        (change)="updateItemsPerPage()"
+        class="px-4 py-2 bg-white border-2 border-gray-300 rounded-lg text-gray-900 focus:outline-none focus:border-black focus:ring-2 focus:ring-gray-200 transition-all cursor-pointer"
+      >
+        <option *ngFor="let option of itemsPerPageOptions" [value]="option">
+          {{ option }}
+        </option>
+      </select>
+    </div>
+  </div>
+</div>
