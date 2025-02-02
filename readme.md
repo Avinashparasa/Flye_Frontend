@@ -28,7 +28,8 @@ npm install
 
 # Run the application:
 ```bash
-ng serve  
+ng serve
+```
 
 The app will be available at http://localhost:4200/  
 
@@ -36,6 +37,7 @@ The app will be available at http://localhost:4200/
 # To run the unit tests:
 ```bash
 ng test
+```
 
 ![Image](https://github.com/Avinashparasa/Flye_Frontend/blob/1b1d096f3d0d6fd067164bb3014b6ecda58b2f5b/assets/tests.png?raw=true)
 
