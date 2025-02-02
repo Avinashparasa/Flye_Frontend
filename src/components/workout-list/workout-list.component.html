@@ -38,6 +38,12 @@
         </tr>
       </thead>
       <tbody>
+        <!-- Show "No data found" message if paginatedUsers is empty -->
+        <tr *ngIf="paginatedUsers.length === 0">
+          <td colspan="4" class="p-5 text-center text-gray-700">No data found.</td>
+        </tr>
+
+        <!-- Show user data if paginatedUsers is not empty -->
         <tr *ngFor="let user of paginatedUsers" class="hover:bg-gray-50 transition-all">
           <td class="p-5 text-gray-700 border-b border-gray-200">{{ user.name }}</td>
           <td class="p-5 text-gray-700 border-b border-gray-200">{{ getWorkoutTypes(user) }}</td>
@@ -79,7 +85,7 @@
       Next &gt;&gt;
     </button>
 
-    <!-- Items Per Page -->
+    
     <div class="ml-4 flex items-center space-x-2">
       <label for="itemsPerPage" class="text-gray-700">Items per page:</label>
       <select

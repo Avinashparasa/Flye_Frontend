@@ -30,7 +30,33 @@ export class WorkoutChartComponent implements OnInit {
   constructor() {}
 
   ngOnInit() {
+    this.loadInitialUsers();
     this.loadUsersFromLocalStorage();
+  }
+
+  loadInitialUsers() {
+    this.users = [
+      {
+        name: 'Rushil',
+        workouts: [
+          { type: 'Running', minutes: 30 },
+        ]
+      },
+      {
+        name: 'Abhay',
+        workouts: [
+          { type: 'Swimming', minutes: 60 },
+          { type: 'Cycling', minutes: 45 }
+        ]
+      },
+      {
+        name: 'Ram',
+        workouts: [
+          { type: 'Meditation', minutes: 50 },
+          { type: 'Cycling', minutes: 40 }
+        ]
+      }
+    ];
   }
 
   loadUsersFromLocalStorage() {
