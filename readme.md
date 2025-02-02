@@ -21,7 +21,7 @@ The Health Challenge Tracker is an Angular-based single-page application (SPA) t
 ```bash
 git clone https://github.com/Avinashparasa/Flye_Frontend
 cd health-challenge-tracker
- 
+ ```
 #Install dependencies:
 ```bash
 npm install  
