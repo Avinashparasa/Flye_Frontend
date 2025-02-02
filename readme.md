@@ -34,7 +34,8 @@ The app will be available at http://localhost:4200/
 # To run the unit tests:
 ng test
 
-![Alt text](https://github.com/Avinashparasa/Flye_Frontend/blob/main/assets/tests.png)
+![Alt text](https://github.com/Avinashparasa/Flye_Frontend/raw/main/assets/tests.png)
+
 
 
 
