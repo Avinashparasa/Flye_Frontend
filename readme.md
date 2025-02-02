@@ -34,7 +34,7 @@ The app will be available at http://localhost:4200/
 # To run the unit tests:
 ng test
 
-![Alt text](assets/tests.png)
+![Alt text](src/assets/tests.png)
 
 
 
