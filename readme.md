@@ -23,19 +23,19 @@ git clone https://github.com/Avinashparasa/Flye_Frontend
 cd health-challenge-tracker
  
 #Install dependencies:
-``bash
 npm install  
 
 # Run the application:
-``bash
 ng serve  
 
 The app will be available at http://localhost:4200/  
 
 
 # To run the unit tests:
-``bash
 ng test
+
+![Alt text](https://drive.google.com/file/d/1JoE65WlBu79b2zWu5Qi3MXqn3UTeQy0a/view?usp=sharing)
+
 
 
 
